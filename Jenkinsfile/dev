@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+        environment {
+              gdsnVersion = readMavenPom().getProperties().getProperty('gdsn.version')
+              catalogueItemVersion = readMavenPom().getProperties().getProperty('catalogueItem.version')
+        }
+
+        tools {
+            maven "maven_j"
+        }
+
+    stages {
+        stage('Prepare') {
+                    steps {
+                        echo 'Delete java classes in dir: src/generated ....'
+                        dir ('src/generated') {
+                            deleteDir()
+                            }
+
+                        echo 'Download schema changes....'
+
+                        sh 'curl -o package_gdsm.zip "https://www.gs1.org/docs/gdsn/3.1/BMS_Package_GDSN_Catalogue_Item_Sync_${catalogueItemVersion}.zip" --http1.1'
+                        sh 'unzip -u package_gdsm.zip -d ./src/main/resources/tmp/'
+                        sh 'unzip -u ./src/main/resources/tmp/*.zip -d ./src/main/resources/tmp/'
+                        sh 'cp -ufr ./src/main/resources/tmp/Schemas/* ./src/main/resources'
+
+                        sh 'curl -o gdsn.zip "https://www.gs1.org/docs/gdsn/3.1/Changed%20Schemas%20${gdsnVersion}.zip" --http1.1'
+                        sh 'unzip -u gdsn.zip -d ./src/main/resources/gs1/'
+
+                        dir ('src/main/resources/tmp') {
+                            deleteDir()
+                            }
+                    }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Generating java classes....'
+                sh 'mvn clean jaxb2:generate -P dev'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                sh 'mvn clean deploy -P dev'
+                sh 'git add . '
+                sh 'git commit -m "Generated classes for release ${gdsnVersion}" '
+                sshagent(credentials: ['GitHub-ssh']) {
+                    sh 'git push origin HEAD:dev'
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,262 @@
+<!-- http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/1.5/tutorial/doc/JAXBUsing4.html -->
+<jxb:bindings version="2.1"
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:annox="http://annox.dev.java.net"  jxb:extensionBindingPrefixes="annox">
+  <jxb:globalBindings>
+    <jxb:javaType name="java.time.LocalDate" xmlType="xs:date"
+                  parseMethod="java.time.LocalDate.parse"
+                  printMethod="se.expertsystems.utils.xml.JAXBDatatypeConverter.printDate" />
+    <jxb:javaType name="java.time.LocalTime" xmlType="xs:time"
+                  parseMethod="java.time.LocalTime.parse"
+                  printMethod="se.expertsystems.utils.xml.JAXBDatatypeConverter.printTime" />
+    <jxb:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime"
+                  parseMethod="se.expertsystems.utils.xml.JAXBDatatypeConverter.parseJava8LocalDateTime"
+                  printMethod="se.expertsystems.utils.xml.JAXBDatatypeConverter.printOffsetDateTime" />
+  </jxb:globalBindings>
+
+  <!-- Make CatalogueItemNotificationMessageType and CatalogueItemNotificationType annotated as @XmlRootElement -->
+  <jxb:bindings schemaLocation="gs1/gdsn/CatalogueItemNotification.xsd" node="//xs:complexType[@name = 'CatalogueItemNotificationMessageType']">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:catalogue_item_notification:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/CatalogueItemNotification.xsd" node="//xs:complexType[@name = 'CatalogueItemNotificationType']">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:catalogue_item_notification:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <!-- Make CatalogueItemHierarchicalWithdrawalMessageType annotated as @XmlRootElement -->
+  <jxb:bindings schemaLocation="gs1/gdsn/catalogueItemHierarchicalWithdrawal.xsd" node="//xs:complexType[@name = 'CatalogueItemHierarchicalWithdrawalMessageType']">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:catalogue_item_hierarchical_withdrawal:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+
+  <!-- Make all module types annotated as @XmlRootElement -->
+  <jxb:bindings schemaLocation="gs1/gdsn/AlcoholInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:alcohol_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/AllergenInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:allergen_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/AnimalFeedingModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:animal_feeding:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ApparelInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:apparel_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/AudienceOrPlayerInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:audience_or_player_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/AudioVisualMediaContentInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:audio_visual_media_content_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/AudioVisualMediaProductDescriptionInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:audio_visual_media_product_description_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/AudioVisualMediaProductionInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:audio_visual_media_production_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/AwardPrizeModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:award_prize:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/BatteryInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:battery_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/CertificationInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:certification_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ChemicalRegulationInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:chemical_regulation_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ConsumerInstructionsModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:consumer_instructions:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ControlledSubstanceModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:controlled_substance:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/CopyrightInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:copyright_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/DairyFishMeatPoultryItemModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:dairy_fish_meat_poultry:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/DangerousSubstanceInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:dangerous_substance_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/DeliveryPurchasingInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:delivery_purchasing_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/DietInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:diet_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/DurableGoodsCharacteristicsModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:durable_goods_characteristics:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/DutyFeeTaxInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:duty_fee_tax_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ElectronicDeviceCharacteristicsInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:electronic_device_characteristics_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/FarmingAndProcessingInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:farming_and_processing_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/FoodAndBeverageIngredientModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:food_and_beverage_ingredient:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/FoodAndBeveragePreparationServingModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:food_and_beverage_preparation_serving:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/FoodAndBeveragePropertiesInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:food_and_beverage_properties_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/HealthRelatedInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:health_related_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/HealthWellnessPackagingMarkingModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:health_wellness_packaging_marking:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/HealthcareItemInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:healthcare_item_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/LightingDeviceModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:lighting_device:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/MarketingInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:marketing_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/MaterialModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:material:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/MedicalDeviceTradeItemModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:medical_device_trade_item:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/MovieRevenueInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:movie_revenue_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/NonGTINLogisticsUnitInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:nongtin_logistics_unit_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/NonfoodIngredientModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:nonfood_ingredient:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/NutritionalInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:nutritional_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ONIXPublicationFileInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:onix_publication_file_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/OpticsDeviceInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:optics_device_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/OrganismClassificationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:organism_classification:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PackagingInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:packaging_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PackagingMarkingModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:packaging_marking:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PackagingSustainabilityModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:packaging_sustainability:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PharmaceuticalItemInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:pharmaceutical_item_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PhysicalResourceUsageInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:physical_resource_usage:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PlaceOfItemActivityModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:place_of_item_activity:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PlumbingHVACPipeInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:plumbing_hvac_pipe_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ProductCharacteristicsModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:product_characteristics:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ProductInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:product_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PromotionalItemInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:promotional_item_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PropellantInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:propellant_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/PublicationTitleRatingModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:publication_title_rating:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/ReferencedFileDetailInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:referenced_file_detail_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/RegulatedTradeItemModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:regulated_trade_item:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/SafetyDataSheetModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:safety_data_sheet:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/SalesInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:sales_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/SecurityTagInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:security_tag_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/SoftwareSystemRequirementsModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:software_system_requirements:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/SustainabilityModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:sustainability_module:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TextileMaterialModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:textile_material:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemDataCarrierAndIdentificationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_data_carrier_and_identification:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemDescriptionModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_description:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemDisposalInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_disposal_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemHandlingModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_handling:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemHierarchyModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_hierarchy:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemHumidityInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_humidity_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemLifespanModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_lifespan:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemMeasurementsModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_measurements:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemSizeModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_size:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TradeItemTemperatureInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:trade_item_temperature_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/TransportationHazardousClassificationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:transportation_hazardous_classification:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/VariableTradeItemInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:variable_trade_item_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/VideoDisplayDeviceInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:video_display_device_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="gs1/gdsn/WarrantyInformationModule.xsd" node="//xs:complexType[contains(@name, 'ModuleType')]">
+    <annox:annotate><annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" namespace="urn:gs1:gdsn:warranty_information:xsd:3" /></annox:annotate>
+  </jxb:bindings>
+  <!-- 
+    https://jaxb.java.net/guide/Using_SCD_for_customizations.html 
+    Doesn't work https://github.com/bertramn/jaxb-scd-annox-problem -->
+  <!--  
+  <jxb:bindings scd="type::alcohol_information:AlcoholInformationModuleType" multiple="true" xmlns:alcohol_information="urn:gs1:gdsn:alcohol_information:xsd:3">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" />
+      </annox:annotate>
+    </jxb:bindings>
+    -->
+</jxb:bindings>

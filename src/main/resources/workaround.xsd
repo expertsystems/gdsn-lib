@@ -1,0 +1,14 @@
+<!--
+  Workaround for  org.w3._2001.xmlschema package
+  https://jaxb.java.net/guide/Customizing_Java_packages.html#Tip__get_rid_of_the_org_w3__2001_xmlschema_package
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.w3.org/2001/XMLSchema"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  jaxb:version="2.0">
+  <annotation><appinfo>
+    <jaxb:schemaBindings>
+      <jaxb:package name="se.exder.external.gs1.gdsn3p1"/>
+    </jaxb:schemaBindings>
+  </appinfo></annotation>
+</schema>

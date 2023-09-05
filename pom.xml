@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <gdsn.version>3.1.25</gdsn.version>
+        <catalogueItem.version>June2023</catalogueItem.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <checkstyle.excludes>**/Adapter*.java</checkstyle.excludes>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <build-gdsn.version>${gdsn.version}.0-SNAPSHOT</build-gdsn.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>master</id>
+            <properties>
+                <build-gdsn.version>${gdsn.version}.0</build-gdsn.version>
+            </properties>
+        </profile>
+    </profiles>
+
+    <groupId>se.exder.gdsn</groupId>
+    <artifactId>gdsn-3p1</artifactId>
+    <version>${build-gdsn.version}</version>
+    <name>XML Schemas that generate source code for the GDSN 3.1</name>
+
+    <distributionManagement>
+        <repository>
+            <id>es-releases</id>
+            <name>Expert Systems Release Repository</name>
+            <url>${env.artifact-repository}/releases</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>es-snapshots</id>
+            <name>Expert Systems Snapshot Repository</name>
+            <url>${env.artifact-repository}/snapshots</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>se.expertsystems.utils</groupId>
+            <artifactId>utils-common</artifactId>
+            <version>13.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <!-- Joda date/time classes required by JAXBDatatypeConverter -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.6</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/gs1/**</exclude>
+                    <exclude>**/sbdh/**</exclude>
+                    <exclude>**/*.zip</exclude>
+                </excludes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <!-- Avoid cloning from remote repo when releasing -->
+                    <localCheckout>true</localCheckout>
+                    <pushChanges>false</pushChanges>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- To generate sources, execute goal jaxb2:generate -->
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.15.3</version>
+                <configuration>
+                    <!-- Encoding of sources -->
+                    <encoding>UTF-8</encoding>
+                    <!-- Skip timestamp -->
+                    <noFileHeader>true</noFileHeader>
+                    <generateDirectory>src/generated/java</generateDirectory>
+                    <removeOldOutput>true</removeOldOutput>
+                    <!-- Plugin that allows adding @XmlRootElement annotation https://github.com/highsource/jaxb2-annotate-plugin -->
+                    <args>
+                        <arg>-Xannotate</arg>
+                    </args>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.jvnet.jaxb2_commons</groupId>
+                            <artifactId>jaxb2-basics-annotate</artifactId>
+                            <version>1.1.0</version>
+                        </plugin>
+                    </plugins>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.4.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/generated/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
