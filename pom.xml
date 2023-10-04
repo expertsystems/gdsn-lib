@@ -14,13 +14,13 @@
         <profile>
             <id>dev</id>
             <properties>
-                <build-gdsn.version>${gdsn.version}.0-SNAPSHOT</build-gdsn.version>
+                <build-gdsn.version>${gdsn.version}.1-SNAPSHOT</build-gdsn.version>
             </properties>
         </profile>
         <profile>
             <id>master</id>
             <properties>
-                <build-gdsn.version>${gdsn.version}.0</build-gdsn.version>
+                <build-gdsn.version>${gdsn.version}.1</build-gdsn.version>
             </properties>
         </profile>
     </profiles>
