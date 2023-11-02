@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import gs1.gdsn.gdsn_common.xsd._3.GS1AttributeValuePairListType;
 import gs1.gdsn.gdsn_common.xsd._3.MeasurementPrecisionCodeType;
+import gs1.shared.shared_common.xsd._3.Description200Type;
 import gs1.shared.shared_common.xsd._3.Description500Type;
 import gs1.shared.shared_common.xsd._3.MeasurementType;
 import gs1.shared.shared_common.xsd._3.NutrientTypeCodeType;
@@ -42,6 +43,7 @@ import gs1.shared.shared_common.xsd._3.NutrientTypeCodeType;
  *         &lt;element name="nutrientSource" type="{urn:gs1:shared:shared_common:xsd:3}Description500Type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="expressedAsPartOf" type="{urn:gs1:shared:shared_common:xsd:3}NutrientTypeCodeType" minOccurs="0"/&gt;
  *         &lt;element name="isNutrientOnFrontOfPackage" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="nutrientNameOnPackage" type="{urn:gs1:shared:shared_common:xsd:3}Description200Type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="avpList" type="{urn:gs1:gdsn:gdsn_common:xsd:3}GS1_AttributeValuePairListType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -63,6 +65,7 @@ import gs1.shared.shared_common.xsd._3.NutrientTypeCodeType;
     "nutrientSource",
     "expressedAsPartOf",
     "isNutrientOnFrontOfPackage",
+    "nutrientNameOnPackage",
     "avpList"
 })
 public class NutrientDetailType {
@@ -78,6 +81,7 @@ public class NutrientDetailType {
     protected List<Description500Type> nutrientSource;
     protected NutrientTypeCodeType expressedAsPartOf;
     protected Boolean isNutrientOnFrontOfPackage;
+    protected List<Description200Type> nutrientNameOnPackage;
     protected GS1AttributeValuePairListType avpList;
 
     /**
@@ -333,6 +337,35 @@ public class NutrientDetailType {
      */
     public void setIsNutrientOnFrontOfPackage(Boolean value) {
         this.isNutrientOnFrontOfPackage = value;
+    }
+
+    /**
+     * Gets the value of the nutrientNameOnPackage property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the nutrientNameOnPackage property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getNutrientNameOnPackage().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Description200Type }
+     * 
+     * 
+     */
+    public List<Description200Type> getNutrientNameOnPackage() {
+        if (nutrientNameOnPackage == null) {
+            nutrientNameOnPackage = new ArrayList<Description200Type>();
+        }
+        return this.nutrientNameOnPackage;
     }
 
     /**
