@@ -22,7 +22,7 @@ pipeline {
                         sh 'curl -o package_gdsm.zip "https://www.gs1.org/docs/gdsn/3.1/BMS_Package_GDSN_Catalogue_Item_Sync_${catalogueItemVersion}.zip" --http1.1'
                         sh 'unzip -u package_gdsm.zip -d ./src/main/resources/tmp/'
                         sh 'unzip -u ./src/main/resources/tmp/*.zip -d ./src/main/resources/tmp/'
-                        sh 'cp -ufr ./src/main/resources/tmp/Schemas/* ./src/main/resources'
+                        sh 'cp -fr ./src/main/resources/tmp/Schemas/* ./src/main/resources'
 
                         sh 'curl -o gdsn.zip "https://www.gs1.org/docs/gdsn/3.1/Changed%20Schemas%20${gdsnVersion}.zip" --http1.1'
                         sh 'unzip -u gdsn.zip -d ./src/main/resources/gs1/'
