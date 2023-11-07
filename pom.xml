@@ -20,7 +20,7 @@
         <profile>
             <id>master</id>
             <properties>
-                <build-gdsn.version>${gdsn.version}.0</build-gdsn.version>
+                <build-gdsn.version>${gdsn.version}.1</build-gdsn.version>
             </properties>
         </profile>
     </profiles>
@@ -69,8 +69,6 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <excludes>
-<!--                    <exclude>**/gs1/**</exclude>-->
-<!--                    <exclude>**/sbdh/**</exclude>-->
                     <exclude>**/*.zip</exclude>
                 </excludes>
                 <filtering>false</filtering>
