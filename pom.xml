@@ -69,8 +69,6 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <excludes>
-<!--                    <exclude>**/gs1/**</exclude>-->
-<!--                    <exclude>**/sbdh/**</exclude>-->
                     <exclude>**/*.zip</exclude>
                 </excludes>
                 <filtering>false</filtering>
