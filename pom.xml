@@ -97,7 +97,7 @@
                     <noFileHeader>true</noFileHeader>
                     <generateDirectory>src/generated/java</generateDirectory>
                     <removeOldOutput>true</removeOldOutput>
-                    <!-- Plugin that allows adding @XmlRootElement annotation https://github.com/highsource/jaxb2-annotate-plugin -->
+                    <!-- Plugin that allows adding @XmlRootElement annotation -->
                     <args>
                         <arg>-Xannotate</arg>
                     </args>
