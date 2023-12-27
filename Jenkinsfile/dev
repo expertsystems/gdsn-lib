@@ -1,22 +1,4 @@
 pipeline {
-        triggers {
-            githubPullRequest {
-                admin('Sergei-Kusleev')
-                userWhitelist('sergei.kusleev@kofax.com')
-                cron('')
-                triggerPhrase('special trigger phrase')
-                onlyTriggerPhrase()
-                useGitHubHooks()
-                permitAll()
-                autoCloseFailedPullRequests()
-                displayBuildErrorsOnDownstreamBuilds()
-                whiteListTargetBranches(['dev', 'build_by_webhooks_1'])
-                blackListTargetBranches(['master'])
-                whiteListLabels(['foo', 'bar'])
-                blackListLabels(['baz'])
-                allowMembersOfWhitelistedOrgsAsAdmin()
-            }
-        }
     agent any
         environment {
               gdsnVersion = readMavenPom().getProperties().getProperty('gdsn.version')
