@@ -363,6 +363,7 @@ import gs1.gdsn.sales_information.xsd._3.TradeItemPriceTypeCodeType;
 import gs1.gdsn.security_tag_information.xsd._3.SecurityTagLocationCodeType;
 import gs1.gdsn.security_tag_information.xsd._3.SecurityTagTypeCodeType;
 import gs1.gdsn.software_system_requirements.xsd._3.SystemRequirementsQualifierTypeCodeType;
+import gs1.gdsn.sustainability_module.xsd._3.SustainabilityProgramCodeType;
 import gs1.gdsn.trade_item.xsd._3.ReasonForCPVCodeType;
 import gs1.gdsn.trade_item_data_carrier_and_identification.xsd._3.ApplicationIdentifierTypeCodeType;
 import gs1.gdsn.trade_item_data_carrier_and_identification.xsd._3.DataCarrierFamilyTypeCodeType;
@@ -818,6 +819,7 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     SecurityTagLocationCodeType.class,
     SecurityTagTypeCodeType.class,
     SystemRequirementsQualifierTypeCodeType.class,
+    SustainabilityProgramCodeType.class,
     gs1.gdsn.textile_material.xsd._3.MaterialDensityCodeType.class,
     gs1.gdsn.textile_material.xsd._3.TradeItemMaterialDesignationCodeType.class,
     ApplicationIdentifierTypeCodeType.class,
