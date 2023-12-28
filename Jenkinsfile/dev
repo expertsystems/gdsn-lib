@@ -1,30 +1,5 @@
 pipeline {
     agent any
-          triggers {
-            GenericTrigger(
-             genericVariables: [
-              [key: 'action',
-               value: '$.action'
-               expressionType: 'JSONPath',
-               regexpFilter: 'closed'],
-              [key: 'headRef', value: '$.head.ref'],
-              [key: 'mergedLogin', value: '$.merged_by.login'],
-              [key: 'merged', value: '$.merged']
-             ],
-
-             causeString: 'Triggered on $ref',
-
-             token: '123',
-             tokenCredentialId: '',
-
-             printContributedVariables: true,
-             printPostContent: true,
-
-             silentResponse: false,
-
-             shouldNotFlatten: false,
-            )
-          }
         environment {
               gdsnVersion = readMavenPom().getProperties().getProperty('gdsn.version')
               catalogueItemVersion = readMavenPom().getProperties().getProperty('catalogueItem.version')
