@@ -30,6 +30,12 @@ pipeline {
                             def mergedLogin = env.mergedLogin
                             def merged = env.merged
 
+                            echo "************ -----------------------------------"
+                            echo action
+                            echo headRef
+                            echo merged
+                            echo mergedLogin
+
                             // Проверка условия
                             if (action == 'closed' && merged == 'true') {
                                 echo "Conditions met. Proceeding with the job."
