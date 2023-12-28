@@ -44,6 +44,7 @@ pipeline {
                                 currentBuild.result = 'ABORTED'
                                 error "Build aborted due to conditions not met."
                             }
+                        }
 
                         echo 'Delete java classes in dir: src/generated ....'
                         dir ('src/generated') {
