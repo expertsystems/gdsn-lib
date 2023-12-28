@@ -5,8 +5,8 @@ pipeline {
              genericVariables: [
               [key: 'action', value: '$.action'],
               [key: 'headRef', value: '$.head.ref'],
-              [key: 'mergedLogin', value: '$.pull_request.base.merged_by.login'],
-              [key: 'merged', value: '$.pull_request.base.merged']
+              [key: 'mergedLogin', value: '$.pull_request.merged_by.login'],
+              [key: 'merged', value: '$.pull_request.merged']
              ],
             )
           }
