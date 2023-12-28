@@ -1,5 +1,15 @@
 pipeline {
     agent any
+          triggers {
+            GenericTrigger(
+             genericVariables: [
+              [key: 'action',
+               value: '$.action'
+               expressionType: 'JSONPath',
+               regexpFilter: 'closed']
+             ]
+            )
+          }
         environment {
               gdsnVersion = readMavenPom().getProperties().getProperty('gdsn.version')
               catalogueItemVersion = readMavenPom().getProperties().getProperty('catalogueItem.version')
