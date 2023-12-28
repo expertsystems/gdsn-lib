@@ -3,11 +3,10 @@ pipeline {
           triggers {
             GenericTrigger(
              genericVariables: [
-              [key: 'action',
-               value: '$.action'],
+              [key: 'action', value: '$.action'],
               [key: 'headRef', value: '$.head.ref'],
               [key: 'mergedLogin', value: '$.merged_by.login'],
-              [key: 'merged', value: '$.merged']
+              [key: 'merged', value: '$.pull_request.base.merged']
              ],
             )
           }
