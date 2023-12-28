@@ -4,10 +4,11 @@ pipeline {
             GenericTrigger(
              genericVariables: [
               [key: 'action',
-               value: '$.action'
-               expressionType: 'JSONPath',
-               regexpFilter: 'closed']
-             ]
+               value: '$.action'],
+              [key: 'headRef', value: '$.head.ref'],
+              [key: 'mergedLogin', value: '$.merged_by.login'],
+              [key: 'merged', value: '$.merged']
+             ],
             )
           }
         environment {
@@ -22,6 +23,22 @@ pipeline {
     stages {
         stage('Prepare') {
                     steps {
+                        script {
+                            // Извлекаем значения переменных из триггера
+                            def action = env.action
+                            def headRef = env.headRef
+                            def mergedLogin = env.mergedLogin
+                            def merged = env.merged
+
+                            // Проверка условия
+                            if (action == 'closed' && merged == 'true') {
+                                echo "Conditions met. Proceeding with the job."
+                            } else {
+                                echo "Conditions not met. Skipping the job."
+                                currentBuild.result = 'ABORTED'
+                                error "Build aborted due to conditions not met."
+                            }
+
                         echo 'Delete java classes in dir: src/generated ....'
                         dir ('src/generated') {
                             deleteDir()
