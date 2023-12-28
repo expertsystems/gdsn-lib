@@ -17,7 +17,7 @@ pipeline {
                             def action = env.action
                             def merged = env.merged
 
-                            if (action =! 'closed' && merged =! 'true') {
+                            if (action != 'closed' && merged != 'true') {
                                 echo "Conditions not met. Skipping the job."
                                 echo "action:" action
                                 echo "merged:" merged
