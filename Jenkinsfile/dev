@@ -13,23 +13,14 @@ pipeline {
         stage('Prepare') {
                     steps {
                         script {
-                            // Извлекаем значения переменных из триггера
+                            // Extracting the values of variables from the trigger
                             def action = env.action
-                            def headRef = env.headRef
-                            def mergedLogin = env.mergedLogin
                             def merged = env.merged
 
-                            echo "************ -----------------------------------"
-                            echo action
-                            echo headRef
-                            echo merged
-                            echo mergedLogin
-
-                            // Проверка условия
-                            if (action == 'closed' && merged == 'true') {
-                                echo "Conditions met. Proceeding with the job."
-                            } else {
+                            if (action =! 'closed' && merged =! 'true') {
                                 echo "Conditions not met. Skipping the job."
+                                echo "action:" action
+                                echo "merged:" merged
                                 currentBuild.result = 'ABORTED'
                                 error "Build aborted due to conditions not met."
                             }
