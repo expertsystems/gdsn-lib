@@ -9,15 +9,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    if ('actionState' in env) {
+                    if ('actionState' in env || env.actionState == null ) {
                         currentBuild.result = 'ABORTED'
                         error "The build was aborted. The variable actionState was not found or is null."
                     }
-                    if ('isMerged' in env) {
+                    if ('isMerged' in env || env.isMerged == null ) {
                         currentBuild.result = 'ABORTED'
                         error "The build was aborted. The variable isMerged was not found or is null."
                     }
-                    if ('branchName' in env) {
+                    if ('branchName' in env || env.branchName == null ) {
                         currentBuild.result = 'ABORTED'
                         error "The build was aborted. The variable branchName was not found or is null."
                     }
