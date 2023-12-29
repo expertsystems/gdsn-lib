@@ -10,13 +10,13 @@ pipeline {
             steps {
                 script {
                     // Extracting the values of variables from the trigger
-                    def action = env.action
-                    def merged = env.merged
+                    def actionState = env.actionState
+                    def isMerged = env.isMerged
 
-                    if (action != 'closed' && merged != 'true') {
+                    if (actionState != 'closed' && isMerged != 'true') {
                         echo "Conditions not met. Skipping the job."
-                        echo "action:" action
-                        echo "merged:" merged
+                        echo "actionState:" actionState
+                        echo "isMerged:" isMerged
                         currentBuild.result = 'ABORTED'
                         error "Build aborted due to conditions not met."
                     }
