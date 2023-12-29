@@ -31,7 +31,7 @@ pipeline {
                             def isMerged = env.isMerged
                             def branchName = env.branchName
 
-                            if (actionState != 'closed' || isMerged != 'true') {
+                            if (actionState != 'closed' || isMerged != 'true' || branchName != 'release_3.1.26') {
                                 echo "Conditions not met. Skipping the job."
                                 echo "actionState:" actionState
                                 echo "isMerged:" isMerged
