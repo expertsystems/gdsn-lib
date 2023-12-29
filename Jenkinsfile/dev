@@ -18,6 +18,10 @@ pipeline {
                             def merged = env.merged
                             def branchName = env.branchName
 
+                            echo "action:" action
+                            echo "merged:" merged
+                            echo "branchName:" branchName
+
                             if (action != 'closed' && merged != 'true' && branchName !=~ /^release-d(\d|dd)\.(\d|dd)\.(\d|dd)$/) {
                                 echo "Conditions not met. Skipping the job."
                                 echo "action:" action
