@@ -12,6 +12,36 @@ pipeline {
     stages {
         stage('Prepare') {
                     steps {
+                        script {
+                            if ('actionState' in env || env.actionState == null ) {
+                                currentBuild.result = 'ABORTED'
+                                error "The build was aborted. The variable actionState was not found or is null."
+                            }
+                            if ('isMerged' in env || env.isMerged == null ) {
+                                currentBuild.result = 'ABORTED'
+                                error "The build was aborted. The variable isMerged was not found or is null."
+                            }
+                            if ('branchName' in env || env.branchName == null ) {
+                                currentBuild.result = 'ABORTED'
+                                error "The build was aborted. The variable branchName was not found or is null."
+                            }
+
+                            // Extracting the values of variables from the trigger
+                            def actionState = env.actionState
+                            def isMerged = env.isMerged
+                            def branchName = env.branchName
+                             def isBranchName = branchName ==~ /^release-(\d\d|\d)\.(\d\d|\d)\.(\d\d|\d)$/
+
+                            if (actionState != 'closed' || isMerged != 'true' || !isBranchName) {
+                                echo "Conditions not met. Skipping the job."
+                                echo "actionState: ${actionState}"
+                                echo "isMerged: ${isMerged}"
+                                echo "branchName: ${branchName}"
+                                currentBuild.result = 'ABORTED'
+                                error "Build aborted due to conditions not met."
+                            }
+                        }
+
                         echo 'Delete java classes in dir: src/generated ....'
                         dir ('src/generated') {
                             deleteDir()
