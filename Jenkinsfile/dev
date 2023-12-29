@@ -34,9 +34,6 @@ pipeline {
 
                             if (actionState != 'closed' || isMerged != 'true' || !isBranchName) {
                                 echo "Conditions not met. Skipping the job."
-                                echo "actionState:" actionState
-                                echo "isMerged:" isMerged
-                                echo "branchName:" branchName
                                 currentBuild.result = 'ABORTED'
                                 error "Build aborted due to conditions not met."
                             }
