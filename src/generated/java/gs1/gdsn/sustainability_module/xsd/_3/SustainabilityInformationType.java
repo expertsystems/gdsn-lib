@@ -41,6 +41,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
  *         &lt;element name="totalRecyclableContentPercentage" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
  *         &lt;element name="tradeItemSustainabilityFeatureCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}SustainabilityFeatureCodeType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="tradeItemSustainabilityStatement" type="{urn:gs1:shared:shared_common:xsd:3}Description5000Type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="sustainabilityProgramInformation" type="{urn:gs1:gdsn:sustainability_module:xsd:3}SustainabilityProgramInformationType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="avpList" type="{urn:gs1:gdsn:gdsn_common:xsd:3}GS1_AttributeValuePairListType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -61,6 +62,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
     "totalRecyclableContentPercentage",
     "tradeItemSustainabilityFeatureCode",
     "tradeItemSustainabilityStatement",
+    "sustainabilityProgramInformation",
     "avpList"
 })
 public class SustainabilityInformationType {
@@ -78,6 +80,7 @@ public class SustainabilityInformationType {
     protected BigDecimal totalRecyclableContentPercentage;
     protected List<SustainabilityFeatureCodeType> tradeItemSustainabilityFeatureCode;
     protected List<Description5000Type> tradeItemSustainabilityStatement;
+    protected List<SustainabilityProgramInformationType> sustainabilityProgramInformation;
     protected GS1AttributeValuePairListType avpList;
 
     /**
@@ -309,6 +312,35 @@ public class SustainabilityInformationType {
             tradeItemSustainabilityStatement = new ArrayList<Description5000Type>();
         }
         return this.tradeItemSustainabilityStatement;
+    }
+
+    /**
+     * Gets the value of the sustainabilityProgramInformation property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sustainabilityProgramInformation property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSustainabilityProgramInformation().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link SustainabilityProgramInformationType }
+     * 
+     * 
+     */
+    public List<SustainabilityProgramInformationType> getSustainabilityProgramInformation() {
+        if (sustainabilityProgramInformation == null) {
+            sustainabilityProgramInformation = new ArrayList<SustainabilityProgramInformationType>();
+        }
+        return this.sustainabilityProgramInformation;
     }
 
     /**
