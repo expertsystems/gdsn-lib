@@ -16,11 +16,13 @@ pipeline {
                             // Extracting the values of variables from the trigger
                             def action = env.action
                             def merged = env.merged
+                            def branchName = env.branchName
 
-                            if (action != 'closed' && merged != 'true') {
+                            if (action != 'closed' && merged != 'true' && branchName !=~ /^release-d(\d|dd)\.(\d|dd)\.(\d|dd)$/) {
                                 echo "Conditions not met. Skipping the job."
                                 echo "action:" action
                                 echo "merged:" merged
+                                echo "branchName:" branchName
                                 currentBuild.result = 'ABORTED'
                                 error "Build aborted due to conditions not met."
                             }
