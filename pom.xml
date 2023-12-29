@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <gdsn.version>3.1.25</gdsn.version>
-        <catalogueItem.version>June2023</catalogueItem.version>
+        <gdsn.version>3.1.26</gdsn.version>
+        <catalogueItem.version>Oct2023</catalogueItem.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <checkstyle.excludes>**/Adapter*.java</checkstyle.excludes>
