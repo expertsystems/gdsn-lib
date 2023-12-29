@@ -50,6 +50,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SustainabilityProgramCodeType }
+     * 
+     */
+    public SustainabilityProgramCodeType createSustainabilityProgramCodeType() {
+        return new SustainabilityProgramCodeType();
+    }
+
+    /**
+     * Create an instance of {@link SustainabilityProgramInformationType }
+     * 
+     */
+    public SustainabilityProgramInformationType createSustainabilityProgramInformationType() {
+        return new SustainabilityProgramInformationType();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SustainabilityModuleType }{@code >}
      * 
      * @param value
