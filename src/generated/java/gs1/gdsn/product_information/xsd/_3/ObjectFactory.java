@@ -114,6 +114,62 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CannabinoidContentCodeType }
+     * 
+     */
+    public CannabinoidContentCodeType createCannabinoidContentCodeType() {
+        return new CannabinoidContentCodeType();
+    }
+
+    /**
+     * Create an instance of {@link CannabinoidContentInformationType }
+     * 
+     */
+    public CannabinoidContentInformationType createCannabinoidContentInformationType() {
+        return new CannabinoidContentInformationType();
+    }
+
+    /**
+     * Create an instance of {@link CannabinoidTypeCodeType }
+     * 
+     */
+    public CannabinoidTypeCodeType createCannabinoidTypeCodeType() {
+        return new CannabinoidTypeCodeType();
+    }
+
+    /**
+     * Create an instance of {@link CannabisCBDTypeCodeType }
+     * 
+     */
+    public CannabisCBDTypeCodeType createCannabisCBDTypeCodeType() {
+        return new CannabisCBDTypeCodeType();
+    }
+
+    /**
+     * Create an instance of {@link CannabisInformationType }
+     * 
+     */
+    public CannabisInformationType createCannabisInformationType() {
+        return new CannabisInformationType();
+    }
+
+    /**
+     * Create an instance of {@link CannabisPlantInformationType }
+     * 
+     */
+    public CannabisPlantInformationType createCannabisPlantInformationType() {
+        return new CannabisPlantInformationType();
+    }
+
+    /**
+     * Create an instance of {@link CannabisPlantTypeCodeType }
+     * 
+     */
+    public CannabisPlantTypeCodeType createCannabisPlantTypeCodeType() {
+        return new CannabisPlantTypeCodeType();
+    }
+
+    /**
      * Create an instance of {@link ClaimDetailType }
      * 
      */
@@ -522,11 +578,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TerpeneInformationType }
+     * 
+     */
+    public TerpeneInformationType createTerpeneInformationType() {
+        return new TerpeneInformationType();
+    }
+
+    /**
+     * Create an instance of {@link TerpeneTypeCodeType }
+     * 
+     */
+    public TerpeneTypeCodeType createTerpeneTypeCodeType() {
+        return new TerpeneTypeCodeType();
+    }
+
+    /**
      * Create an instance of {@link TimeOfApplicationCodeType }
      * 
      */
     public TimeOfApplicationCodeType createTimeOfApplicationCodeType() {
         return new TimeOfApplicationCodeType();
+    }
+
+    /**
+     * Create an instance of {@link TobaccoCannabisInformationType }
+     * 
+     */
+    public TobaccoCannabisInformationType createTobaccoCannabisInformationType() {
+        return new TobaccoCannabisInformationType();
     }
 
     /**

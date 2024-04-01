@@ -40,6 +40,7 @@ import gs1.shared.shared_common.xsd._3.MeasurementType;
  *         &lt;element name="materialTreatment" type="{urn:gs1:shared:shared_common:xsd:3}Description500Type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="materialDensityCode" type="{urn:gs1:gdsn:material:xsd:3}MaterialDensityCodeType" minOccurs="0"/&gt;
  *         &lt;element name="threadDenier" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *         &lt;element name="rawMaterialInformation" type="{urn:gs1:gdsn:material:xsd:3}RawMaterialInformationType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="materialCountryOfOrigin" type="{urn:gs1:gdsn:gdsn_common:xsd:3}CountryType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="avpList" type="{urn:gs1:gdsn:gdsn_common:xsd:3}GS1_AttributeValuePairListType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -60,6 +61,7 @@ import gs1.shared.shared_common.xsd._3.MeasurementType;
     "materialTreatment",
     "materialDensityCode",
     "threadDenier",
+    "rawMaterialInformation",
     "materialCountryOfOrigin",
     "avpList"
 })
@@ -73,6 +75,7 @@ public class MaterialCompositionType {
     protected List<Description500Type> materialTreatment;
     protected MaterialDensityCodeType materialDensityCode;
     protected BigInteger threadDenier;
+    protected List<RawMaterialInformationType> rawMaterialInformation;
     protected List<CountryType> materialCountryOfOrigin;
     protected GS1AttributeValuePairListType avpList;
 
@@ -286,6 +289,35 @@ public class MaterialCompositionType {
      */
     public void setThreadDenier(BigInteger value) {
         this.threadDenier = value;
+    }
+
+    /**
+     * Gets the value of the rawMaterialInformation property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rawMaterialInformation property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRawMaterialInformation().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link RawMaterialInformationType }
+     * 
+     * 
+     */
+    public List<RawMaterialInformationType> getRawMaterialInformation() {
+        if (rawMaterialInformation == null) {
+            rawMaterialInformation = new ArrayList<RawMaterialInformationType>();
+        }
+        return this.rawMaterialInformation;
     }
 
     /**

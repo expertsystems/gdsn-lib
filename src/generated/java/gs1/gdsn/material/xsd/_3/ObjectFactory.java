@@ -66,6 +66,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RawMaterialCodeType }
+     * 
+     */
+    public RawMaterialCodeType createRawMaterialCodeType() {
+        return new RawMaterialCodeType();
+    }
+
+    /**
+     * Create an instance of {@link RawMaterialInformationType }
+     * 
+     */
+    public RawMaterialInformationType createRawMaterialInformationType() {
+        return new RawMaterialInformationType();
+    }
+
+    /**
      * Create an instance of {@link TradeItemMaterialDesignationCodeType }
      * 
      */

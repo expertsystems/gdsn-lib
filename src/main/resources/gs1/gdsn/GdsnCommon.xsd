@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:gdsn_common:xsd:3" version="3.1.26">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:gdsn_common:xsd:3" version="3.1.27">
     <xsd:annotation>
         <xsd:documentation><![CDATA[---------------------------
 © Copyright GS1, 2023
@@ -14,8 +14,8 @@ ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema
 file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
 
 Version Information:
-Version Number: 3.1.26
-Date of creation: October 2023
+Version Number: 3.1.27
+Date of creation: November 2023
 
 The schema and subsequent updates will be provided on the GS1 websites.
 ---------------------------
@@ -69,6 +69,11 @@ The schema and subsequent updates will be provided on the GS1 websites.
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="BioengineeredDeclarationClaimCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="CarrierSubstanceTypeCodeType">
         <xsd:simpleContent>
             <xsd:extension base="shared_common:GS1CodeType"/>
         </xsd:simpleContent>
@@ -319,6 +324,11 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element maxOccurs="unbounded" name="enumerationValueInformation" type="gdsn_common:EnumerationValueInformationType"/>
         </xsd:sequence>
     </xsd:complexType>
+    <xsd:complexType name="ExtractionProcessCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
     <xsd:complexType name="FarmingAndProcessingInformationType">
         <xsd:sequence>
             <xsd:element minOccurs="0" name="geneticallyModifiedDeclarationCode" type="gdsn_common:LevelOfContainmentCodeType"/>
@@ -331,7 +341,25 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="postProcessTradeItemTreatmentPhysicalCode" type="gdsn_common:PostProcessTradeItemTreatmentPhysicalCodeType"/>
             <xsd:element minOccurs="0" name="bioengineeredDeclarationClaimCode" type="gdsn_common:BioengineeredDeclarationClaimCodeType"/>
             <xsd:element minOccurs="0" name="isBioengineeredDeclarationClaimRelevantDataProvided" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="extractionProcessCode" type="gdsn_common:ExtractionProcessCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="growingLightConditionTypeCode" type="gdsn_common:GrowingLightConditionTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="growthCycle" type="shared_common:TimeMeasurementType"/>
+            <xsd:element minOccurs="0" name="tradeItemGenderTypeCode" type="gdsn_common:TradeItemGenderTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="curingMethodDescription" type="shared_common:Description1000Type"/>
+            <xsd:element minOccurs="0" name="floweringTriggerCode" type="gdsn_common:FloweringTriggerCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="flowerTrimmingMethodCode" type="gdsn_common:FlowerTrimmingMethodCodeType"/>
+            <xsd:element minOccurs="0" name="carrierSubstanceTypeCode" type="gdsn_common:CarrierSubstanceTypeCodeType"/>
         </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FloweringTriggerCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="FlowerTrimmingMethodCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
     </xsd:complexType>
     <xsd:complexType name="FormattedDescription250Type">
         <xsd:simpleContent>
@@ -427,6 +455,11 @@ The schema and subsequent updates will be provided on the GS1 websites.
                 <xsd:attribute name="formattingPattern" type="shared_common:String500Type"/>
                 <xsd:attribute name="sequenceNumber" type="xsd:nonNegativeInteger"/>
             </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="GrowingLightConditionTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
         </xsd:simpleContent>
     </xsd:complexType>
     <xsd:complexType name="GrowingMethodCodeType">
@@ -1023,6 +1056,11 @@ The schema and subsequent updates will be provided on the GS1 websites.
         </xsd:simpleContent>
     </xsd:complexType>
     <xsd:complexType name="TradeItemContextCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="TradeItemGenderTypeCodeType">
         <xsd:simpleContent>
             <xsd:extension base="shared_common:GS1CodeType"/>
         </xsd:simpleContent>

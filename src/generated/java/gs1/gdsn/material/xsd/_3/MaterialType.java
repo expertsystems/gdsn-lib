@@ -1,6 +1,7 @@
 
 package gs1.gdsn.material.xsd._3;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -26,6 +27,9 @@ import gs1.shared.shared_common.xsd._3.Description500Type;
  *         &lt;element name="tradeItemMaterialDesignationDescription" type="{urn:gs1:shared:shared_common:xsd:3}Description500Type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="materialStatement" type="{urn:gs1:shared:shared_common:xsd:3}Description5000Type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="tradeItemMaterialDesignationCode" type="{urn:gs1:gdsn:material:xsd:3}TradeItemMaterialDesignationCodeType" minOccurs="0"/&gt;
+ *         &lt;element name="isDesignationIntendedForSingleUse" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="canMaterialsBeSeparatedManually" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="numberOfDesignationUnits" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
  *         &lt;element name="materialComposition" type="{urn:gs1:gdsn:material:xsd:3}MaterialCompositionType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="avpList" type="{urn:gs1:gdsn:gdsn_common:xsd:3}GS1_AttributeValuePairListType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -42,6 +46,9 @@ import gs1.shared.shared_common.xsd._3.Description500Type;
     "tradeItemMaterialDesignationDescription",
     "materialStatement",
     "tradeItemMaterialDesignationCode",
+    "isDesignationIntendedForSingleUse",
+    "canMaterialsBeSeparatedManually",
+    "numberOfDesignationUnits",
     "materialComposition",
     "avpList"
 })
@@ -51,6 +58,9 @@ public class MaterialType {
     protected List<Description500Type> tradeItemMaterialDesignationDescription;
     protected List<Description5000Type> materialStatement;
     protected TradeItemMaterialDesignationCodeType tradeItemMaterialDesignationCode;
+    protected Boolean isDesignationIntendedForSingleUse;
+    protected Boolean canMaterialsBeSeparatedManually;
+    protected BigInteger numberOfDesignationUnits;
     protected List<MaterialCompositionType> materialComposition;
     protected GS1AttributeValuePairListType avpList;
 
@@ -158,6 +168,78 @@ public class MaterialType {
      */
     public void setTradeItemMaterialDesignationCode(TradeItemMaterialDesignationCodeType value) {
         this.tradeItemMaterialDesignationCode = value;
+    }
+
+    /**
+     * Gets the value of the isDesignationIntendedForSingleUse property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isIsDesignationIntendedForSingleUse() {
+        return isDesignationIntendedForSingleUse;
+    }
+
+    /**
+     * Sets the value of the isDesignationIntendedForSingleUse property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setIsDesignationIntendedForSingleUse(Boolean value) {
+        this.isDesignationIntendedForSingleUse = value;
+    }
+
+    /**
+     * Gets the value of the canMaterialsBeSeparatedManually property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isCanMaterialsBeSeparatedManually() {
+        return canMaterialsBeSeparatedManually;
+    }
+
+    /**
+     * Sets the value of the canMaterialsBeSeparatedManually property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setCanMaterialsBeSeparatedManually(Boolean value) {
+        this.canMaterialsBeSeparatedManually = value;
+    }
+
+    /**
+     * Gets the value of the numberOfDesignationUnits property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getNumberOfDesignationUnits() {
+        return numberOfDesignationUnits;
+    }
+
+    /**
+     * Sets the value of the numberOfDesignationUnits property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setNumberOfDesignationUnits(BigInteger value) {
+        this.numberOfDesignationUnits = value;
     }
 
     /**

@@ -97,11 +97,13 @@ import gs1.gdsn.food_and_beverage_preparation_serving.xsd._3.ProductTextureCodeT
 import gs1.gdsn.food_and_beverage_preparation_serving.xsd._3.ProductYieldTypeCodeType;
 import gs1.gdsn.food_and_beverage_properties_information.xsd._3.MicrobiologicalOrganismCodeType;
 import gs1.gdsn.food_and_beverage_properties_information.xsd._3.MicrobiologicalOrganismMethodOfAnalysisCodeType;
+import gs1.gdsn.food_and_beverage_properties_information.xsd._3.MicrobiologicalOrganismStrainCodeType;
 import gs1.gdsn.food_and_beverage_properties_information.xsd._3.PhysiochemicalCharacteristicCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.AdditionalTradeItemClassificationCodeListCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.AspectRatioDescriptionCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.AspectRatioDimensionCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.BioengineeredDeclarationClaimCodeType;
+import gs1.gdsn.gdsn_common.xsd._3.CarrierSubstanceTypeCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.CatalogueItemConfirmationStatusCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.ConfirmationStatusReasonCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.CorrectiveActionCodeType;
@@ -112,6 +114,10 @@ import gs1.gdsn.gdsn_common.xsd._3.DimensionTypeCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.DisplayTypeCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.DistributionMethodCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.ExceptionMessageTypeCodeType;
+import gs1.gdsn.gdsn_common.xsd._3.ExtractionProcessCodeType;
+import gs1.gdsn.gdsn_common.xsd._3.FlowerTrimmingMethodCodeType;
+import gs1.gdsn.gdsn_common.xsd._3.FloweringTriggerCodeType;
+import gs1.gdsn.gdsn_common.xsd._3.GrowingLightConditionTypeCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.GrowingMethodCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.HierarchyDeletionReasonCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.ImageFacingCodeType;
@@ -143,9 +149,9 @@ import gs1.gdsn.gdsn_common.xsd._3.SustainabilityFeatureCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.TemperatureQualifierCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.TradeChannelCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.TradeItemContextCodeType;
+import gs1.gdsn.gdsn_common.xsd._3.TradeItemGenderTypeCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.TradeItemUnitDescriptorCodeType;
 import gs1.gdsn.gdsn_common.xsd._3.TransactionalMeasurementUnitCodeType;
-import gs1.gdsn.health_related_information.xsd._3.CannabisCBDTypeCodeType;
 import gs1.gdsn.health_related_information.xsd._3.CompulsoryAdditionalLabelInformationTypeCodeType;
 import gs1.gdsn.health_related_information.xsd._3.NutritionalLabelTypeCodeType;
 import gs1.gdsn.health_related_information.xsd._3.NutritionalProgramCodeType;
@@ -170,6 +176,7 @@ import gs1.gdsn.marketing_information.xsd._3.TargetConsumerAgeGroupCodeType;
 import gs1.gdsn.marketing_information.xsd._3.TargetConsumerGenderCodeType;
 import gs1.gdsn.marketing_information.xsd._3.TargetConsumerUsageTypeCodeType;
 import gs1.gdsn.marketing_information.xsd._3.TypeOfBasicTasteCodeType;
+import gs1.gdsn.material.xsd._3.RawMaterialCodeType;
 import gs1.gdsn.medical_device_trade_item.xsd._3.AnnexXVIIntendedPurposeTypeCodeType;
 import gs1.gdsn.medical_device_trade_item.xsd._3.EUMedicalDeviceStatusCodeType;
 import gs1.gdsn.medical_device_trade_item.xsd._3.EUMedicalDeviceSubStatusCodeType;
@@ -209,9 +216,13 @@ import gs1.gdsn.onix_publication_file_information.xsd._3.ONIXTitleTypeCodeType;
 import gs1.gdsn.optics_device_information.xsd._3.ZoomTypeCodeType;
 import gs1.gdsn.packaging_information.xsd._3.AverageDistanceToPointOfPackagingCodeType;
 import gs1.gdsn.packaging_information.xsd._3.PackageTypeCodeType;
+import gs1.gdsn.packaging_information.xsd._3.PackagingClaimElementCodeType;
+import gs1.gdsn.packaging_information.xsd._3.PackagingClaimTypeCodeType;
 import gs1.gdsn.packaging_information.xsd._3.PackagingFeatureCodeType;
 import gs1.gdsn.packaging_information.xsd._3.PackagingFunctionCodeType;
 import gs1.gdsn.packaging_information.xsd._3.PackagingLabellingTypeCodeType;
+import gs1.gdsn.packaging_information.xsd._3.PackagingMaterialAdhesiveSolubilityTypeCodeType;
+import gs1.gdsn.packaging_information.xsd._3.PackagingMaterialAdhesiveTypeCodeType;
 import gs1.gdsn.packaging_information.xsd._3.PackagingMaterialAppliedProcessCodeType;
 import gs1.gdsn.packaging_information.xsd._3.PackagingMaterialElementCodeType;
 import gs1.gdsn.packaging_information.xsd._3.PackagingMaterialPerformanceCodeType;
@@ -280,6 +291,9 @@ import gs1.gdsn.product_information.xsd._3.ApparelDetailPlacementCodeType;
 import gs1.gdsn.product_information.xsd._3.ApparelDetailSizeCodeType;
 import gs1.gdsn.product_information.xsd._3.ApparelDetailTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.BrushBroomTypeCodeType;
+import gs1.gdsn.product_information.xsd._3.CannabinoidContentCodeType;
+import gs1.gdsn.product_information.xsd._3.CannabinoidTypeCodeType;
+import gs1.gdsn.product_information.xsd._3.CannabisPlantTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.ClaimElementCodeType;
 import gs1.gdsn.product_information.xsd._3.ClaimTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.CleaningClothTypeCodeType;
@@ -320,6 +334,7 @@ import gs1.gdsn.product_information.xsd._3.TablewareTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.TargetHairTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.TargetSkinTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.TargetSurfaceTypeCodeType;
+import gs1.gdsn.product_information.xsd._3.TerpeneTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.TimeOfApplicationCodeType;
 import gs1.gdsn.product_information.xsd._3.ToeStyleTypeCodeType;
 import gs1.gdsn.product_information.xsd._3.TowelTypeCodeType;
@@ -464,6 +479,7 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     AspectRatioDescriptionCodeType.class,
     AspectRatioDimensionCodeType.class,
     BioengineeredDeclarationClaimCodeType.class,
+    CarrierSubstanceTypeCodeType.class,
     CatalogueItemConfirmationStatusCodeType.class,
     ConfirmationStatusReasonCodeType.class,
     CorrectiveActionCodeType.class,
@@ -474,6 +490,10 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     DisplayTypeCodeType.class,
     DistributionMethodCodeType.class,
     ExceptionMessageTypeCodeType.class,
+    ExtractionProcessCodeType.class,
+    FloweringTriggerCodeType.class,
+    FlowerTrimmingMethodCodeType.class,
+    GrowingLightConditionTypeCodeType.class,
     GrowingMethodCodeType.class,
     HierarchyDeletionReasonCodeType.class,
     ImageFacingCodeType.class,
@@ -505,6 +525,7 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     TemperatureQualifierCodeType.class,
     TradeChannelCodeType.class,
     TradeItemContextCodeType.class,
+    TradeItemGenderTypeCodeType.class,
     TradeItemUnitDescriptorCodeType.class,
     TransactionalMeasurementUnitCodeType.class,
     ReasonForCPVCodeType.class,
@@ -598,8 +619,9 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     ProductYieldTypeCodeType.class,
     MicrobiologicalOrganismCodeType.class,
     MicrobiologicalOrganismMethodOfAnalysisCodeType.class,
+    MicrobiologicalOrganismStrainCodeType.class,
     PhysiochemicalCharacteristicCodeType.class,
-    CannabisCBDTypeCodeType.class,
+    gs1.gdsn.health_related_information.xsd._3.CannabisCBDTypeCodeType.class,
     CompulsoryAdditionalLabelInformationTypeCodeType.class,
     NutritionalLabelTypeCodeType.class,
     NutritionalProgramCodeType.class,
@@ -625,6 +647,7 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     TargetConsumerUsageTypeCodeType.class,
     TypeOfBasicTasteCodeType.class,
     gs1.gdsn.material.xsd._3.MaterialDensityCodeType.class,
+    RawMaterialCodeType.class,
     gs1.gdsn.material.xsd._3.TradeItemMaterialDesignationCodeType.class,
     AnnexXVIIntendedPurposeTypeCodeType.class,
     EUMedicalDeviceStatusCodeType.class,
@@ -665,9 +688,13 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     ZoomTypeCodeType.class,
     AverageDistanceToPointOfPackagingCodeType.class,
     PackageTypeCodeType.class,
+    PackagingClaimElementCodeType.class,
+    PackagingClaimTypeCodeType.class,
     PackagingFeatureCodeType.class,
     PackagingFunctionCodeType.class,
     PackagingLabellingTypeCodeType.class,
+    PackagingMaterialAdhesiveSolubilityTypeCodeType.class,
+    PackagingMaterialAdhesiveTypeCodeType.class,
     PackagingMaterialAppliedProcessCodeType.class,
     PackagingMaterialElementCodeType.class,
     PackagingMaterialPerformanceCodeType.class,
@@ -734,6 +761,10 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     ApparelDetailSizeCodeType.class,
     ApparelDetailTypeCodeType.class,
     BrushBroomTypeCodeType.class,
+    CannabinoidContentCodeType.class,
+    CannabinoidTypeCodeType.class,
+    gs1.gdsn.product_information.xsd._3.CannabisCBDTypeCodeType.class,
+    CannabisPlantTypeCodeType.class,
     ClaimElementCodeType.class,
     ClaimTypeCodeType.class,
     CleaningClothTypeCodeType.class,
@@ -774,6 +805,7 @@ import gs1.gdsn.video_display_device_information.xsd._3.VESAWallMountTypeCodeTyp
     TargetHairTypeCodeType.class,
     TargetSkinTypeCodeType.class,
     TargetSurfaceTypeCodeType.class,
+    TerpeneTypeCodeType.class,
     TimeOfApplicationCodeType.class,
     ToeStyleTypeCodeType.class,
     TowelTypeCodeType.class,

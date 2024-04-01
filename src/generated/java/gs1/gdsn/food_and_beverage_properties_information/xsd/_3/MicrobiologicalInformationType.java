@@ -32,6 +32,7 @@ import gs1.shared.shared_common.xsd._3.MeasurementType;
  *         &lt;element name="microbiologicalOrganismWarningValuePrecisionCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}MeasurementPrecisionCodeType" minOccurs="0"/&gt;
  *         &lt;element name="microbiologicalOrganismMethodOfAnalysisCode" type="{urn:gs1:gdsn:food_and_beverage_properties_information:xsd:3}MicrobiologicalOrganismMethodOfAnalysisCodeType" minOccurs="0"/&gt;
  *         &lt;element name="microbiologicalOrganismMinimumValue" type="{urn:gs1:shared:shared_common:xsd:3}MeasurementType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="microbiologicalOrganismStrainCode" type="{urn:gs1:gdsn:food_and_beverage_properties_information:xsd:3}MicrobiologicalOrganismStrainCodeType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -53,7 +54,8 @@ import gs1.shared.shared_common.xsd._3.MeasurementType;
     "microbiologicalOrganismWarningValueBasis",
     "microbiologicalOrganismWarningValuePrecisionCode",
     "microbiologicalOrganismMethodOfAnalysisCode",
-    "microbiologicalOrganismMinimumValue"
+    "microbiologicalOrganismMinimumValue",
+    "microbiologicalOrganismStrainCode"
 })
 public class MicrobiologicalInformationType {
 
@@ -69,6 +71,7 @@ public class MicrobiologicalInformationType {
     protected MeasurementPrecisionCodeType microbiologicalOrganismWarningValuePrecisionCode;
     protected MicrobiologicalOrganismMethodOfAnalysisCodeType microbiologicalOrganismMethodOfAnalysisCode;
     protected List<MeasurementType> microbiologicalOrganismMinimumValue;
+    protected List<MicrobiologicalOrganismStrainCodeType> microbiologicalOrganismStrainCode;
 
     /**
      * Gets the value of the microbiologicalOrganismCode property.
@@ -391,6 +394,35 @@ public class MicrobiologicalInformationType {
             microbiologicalOrganismMinimumValue = new ArrayList<MeasurementType>();
         }
         return this.microbiologicalOrganismMinimumValue;
+    }
+
+    /**
+     * Gets the value of the microbiologicalOrganismStrainCode property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the microbiologicalOrganismStrainCode property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getMicrobiologicalOrganismStrainCode().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link MicrobiologicalOrganismStrainCodeType }
+     * 
+     * 
+     */
+    public List<MicrobiologicalOrganismStrainCodeType> getMicrobiologicalOrganismStrainCode() {
+        if (microbiologicalOrganismStrainCode == null) {
+            microbiologicalOrganismStrainCode = new ArrayList<MicrobiologicalOrganismStrainCodeType>();
+        }
+        return this.microbiologicalOrganismStrainCode;
     }
 
 }

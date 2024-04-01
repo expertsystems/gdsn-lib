@@ -7,7 +7,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import gs1.shared.shared_common.xsd._3.Description1000Type;
 import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
+import gs1.shared.shared_common.xsd._3.TimeMeasurementType;
 
 
 /**
@@ -30,6 +32,14 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
  *         &lt;element name="postProcessTradeItemTreatmentPhysicalCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}PostProcessTradeItemTreatmentPhysicalCodeType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="bioengineeredDeclarationClaimCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}BioengineeredDeclarationClaimCodeType" minOccurs="0"/&gt;
  *         &lt;element name="isBioengineeredDeclarationClaimRelevantDataProvided" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="extractionProcessCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}ExtractionProcessCodeType" minOccurs="0"/&gt;
+ *         &lt;element name="growingLightConditionTypeCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}GrowingLightConditionTypeCodeType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="growthCycle" type="{urn:gs1:shared:shared_common:xsd:3}TimeMeasurementType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="tradeItemGenderTypeCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}TradeItemGenderTypeCodeType" minOccurs="0"/&gt;
+ *         &lt;element name="curingMethodDescription" type="{urn:gs1:shared:shared_common:xsd:3}Description1000Type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="floweringTriggerCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}FloweringTriggerCodeType" minOccurs="0"/&gt;
+ *         &lt;element name="flowerTrimmingMethodCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}FlowerTrimmingMethodCodeType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="carrierSubstanceTypeCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}CarrierSubstanceTypeCodeType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -49,7 +59,15 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
     "postHarvestTreatmentChemicalCode",
     "postProcessTradeItemTreatmentPhysicalCode",
     "bioengineeredDeclarationClaimCode",
-    "isBioengineeredDeclarationClaimRelevantDataProvided"
+    "isBioengineeredDeclarationClaimRelevantDataProvided",
+    "extractionProcessCode",
+    "growingLightConditionTypeCode",
+    "growthCycle",
+    "tradeItemGenderTypeCode",
+    "curingMethodDescription",
+    "floweringTriggerCode",
+    "flowerTrimmingMethodCode",
+    "carrierSubstanceTypeCode"
 })
 public class FarmingAndProcessingInformationType {
 
@@ -64,6 +82,14 @@ public class FarmingAndProcessingInformationType {
     protected List<PostProcessTradeItemTreatmentPhysicalCodeType> postProcessTradeItemTreatmentPhysicalCode;
     protected BioengineeredDeclarationClaimCodeType bioengineeredDeclarationClaimCode;
     protected Boolean isBioengineeredDeclarationClaimRelevantDataProvided;
+    protected ExtractionProcessCodeType extractionProcessCode;
+    protected List<GrowingLightConditionTypeCodeType> growingLightConditionTypeCode;
+    protected List<TimeMeasurementType> growthCycle;
+    protected TradeItemGenderTypeCodeType tradeItemGenderTypeCode;
+    protected List<Description1000Type> curingMethodDescription;
+    protected FloweringTriggerCodeType floweringTriggerCode;
+    protected List<FlowerTrimmingMethodCodeType> flowerTrimmingMethodCode;
+    protected CarrierSubstanceTypeCodeType carrierSubstanceTypeCode;
 
     /**
      * Gets the value of the geneticallyModifiedDeclarationCode property.
@@ -328,6 +354,218 @@ public class FarmingAndProcessingInformationType {
      */
     public void setIsBioengineeredDeclarationClaimRelevantDataProvided(Boolean value) {
         this.isBioengineeredDeclarationClaimRelevantDataProvided = value;
+    }
+
+    /**
+     * Gets the value of the extractionProcessCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ExtractionProcessCodeType }
+     *     
+     */
+    public ExtractionProcessCodeType getExtractionProcessCode() {
+        return extractionProcessCode;
+    }
+
+    /**
+     * Sets the value of the extractionProcessCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ExtractionProcessCodeType }
+     *     
+     */
+    public void setExtractionProcessCode(ExtractionProcessCodeType value) {
+        this.extractionProcessCode = value;
+    }
+
+    /**
+     * Gets the value of the growingLightConditionTypeCode property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the growingLightConditionTypeCode property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getGrowingLightConditionTypeCode().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link GrowingLightConditionTypeCodeType }
+     * 
+     * 
+     */
+    public List<GrowingLightConditionTypeCodeType> getGrowingLightConditionTypeCode() {
+        if (growingLightConditionTypeCode == null) {
+            growingLightConditionTypeCode = new ArrayList<GrowingLightConditionTypeCodeType>();
+        }
+        return this.growingLightConditionTypeCode;
+    }
+
+    /**
+     * Gets the value of the growthCycle property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the growthCycle property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getGrowthCycle().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TimeMeasurementType }
+     * 
+     * 
+     */
+    public List<TimeMeasurementType> getGrowthCycle() {
+        if (growthCycle == null) {
+            growthCycle = new ArrayList<TimeMeasurementType>();
+        }
+        return this.growthCycle;
+    }
+
+    /**
+     * Gets the value of the tradeItemGenderTypeCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TradeItemGenderTypeCodeType }
+     *     
+     */
+    public TradeItemGenderTypeCodeType getTradeItemGenderTypeCode() {
+        return tradeItemGenderTypeCode;
+    }
+
+    /**
+     * Sets the value of the tradeItemGenderTypeCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TradeItemGenderTypeCodeType }
+     *     
+     */
+    public void setTradeItemGenderTypeCode(TradeItemGenderTypeCodeType value) {
+        this.tradeItemGenderTypeCode = value;
+    }
+
+    /**
+     * Gets the value of the curingMethodDescription property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the curingMethodDescription property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCuringMethodDescription().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Description1000Type }
+     * 
+     * 
+     */
+    public List<Description1000Type> getCuringMethodDescription() {
+        if (curingMethodDescription == null) {
+            curingMethodDescription = new ArrayList<Description1000Type>();
+        }
+        return this.curingMethodDescription;
+    }
+
+    /**
+     * Gets the value of the floweringTriggerCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FloweringTriggerCodeType }
+     *     
+     */
+    public FloweringTriggerCodeType getFloweringTriggerCode() {
+        return floweringTriggerCode;
+    }
+
+    /**
+     * Sets the value of the floweringTriggerCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FloweringTriggerCodeType }
+     *     
+     */
+    public void setFloweringTriggerCode(FloweringTriggerCodeType value) {
+        this.floweringTriggerCode = value;
+    }
+
+    /**
+     * Gets the value of the flowerTrimmingMethodCode property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the flowerTrimmingMethodCode property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFlowerTrimmingMethodCode().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link FlowerTrimmingMethodCodeType }
+     * 
+     * 
+     */
+    public List<FlowerTrimmingMethodCodeType> getFlowerTrimmingMethodCode() {
+        if (flowerTrimmingMethodCode == null) {
+            flowerTrimmingMethodCode = new ArrayList<FlowerTrimmingMethodCodeType>();
+        }
+        return this.flowerTrimmingMethodCode;
+    }
+
+    /**
+     * Gets the value of the carrierSubstanceTypeCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CarrierSubstanceTypeCodeType }
+     *     
+     */
+    public CarrierSubstanceTypeCodeType getCarrierSubstanceTypeCode() {
+        return carrierSubstanceTypeCode;
+    }
+
+    /**
+     * Sets the value of the carrierSubstanceTypeCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CarrierSubstanceTypeCodeType }
+     *     
+     */
+    public void setCarrierSubstanceTypeCode(CarrierSubstanceTypeCodeType value) {
+        this.carrierSubstanceTypeCode = value;
     }
 
 }

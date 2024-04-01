@@ -2,6 +2,7 @@
 package gs1.gdsn.packaging_information.xsd._3;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +46,10 @@ import se.exder.external.gs1.gdsn3p1.Adapter1;
  *         &lt;element name="packagingLabellingCoveragePercentage" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/&gt;
  *         &lt;element name="packagingMaterialElementCode" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingMaterialElementCodeType" minOccurs="0"/&gt;
  *         &lt;element name="packagingMaterialRecyclingSchemeCode" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingRecyclingSchemeCodeType" minOccurs="0"/&gt;
+ *         &lt;element name="numberOfPackagingElementUnits" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *         &lt;element name="packagingMaterialAdhesiveAmount" type="{urn:gs1:shared:shared_common:xsd:3}MeasurementType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="packagingMaterialAdhesiveSolubilityTypeCode" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingMaterialAdhesiveSolubilityTypeCodeType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="packagingMaterialAdhesiveTypeCode" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingMaterialAdhesiveTypeCodeType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="compositeMaterialDetail" type="{urn:gs1:gdsn:packaging_information:xsd:3}CompositeMaterialDetailType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="packagingRawMaterialInformation" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingRawMaterialInformationType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -73,6 +78,10 @@ import se.exder.external.gs1.gdsn3p1.Adapter1;
     "packagingLabellingCoveragePercentage",
     "packagingMaterialElementCode",
     "packagingMaterialRecyclingSchemeCode",
+    "numberOfPackagingElementUnits",
+    "packagingMaterialAdhesiveAmount",
+    "packagingMaterialAdhesiveSolubilityTypeCode",
+    "packagingMaterialAdhesiveTypeCode",
     "compositeMaterialDetail",
     "packagingRawMaterialInformation"
 })
@@ -100,6 +109,10 @@ public class PackagingMaterialType {
     protected BigDecimal packagingLabellingCoveragePercentage;
     protected PackagingMaterialElementCodeType packagingMaterialElementCode;
     protected PackagingRecyclingSchemeCodeType packagingMaterialRecyclingSchemeCode;
+    protected BigInteger numberOfPackagingElementUnits;
+    protected List<MeasurementType> packagingMaterialAdhesiveAmount;
+    protected List<PackagingMaterialAdhesiveSolubilityTypeCodeType> packagingMaterialAdhesiveSolubilityTypeCode;
+    protected List<PackagingMaterialAdhesiveTypeCodeType> packagingMaterialAdhesiveTypeCode;
     protected List<CompositeMaterialDetailType> compositeMaterialDetail;
     protected List<PackagingRawMaterialInformationType> packagingRawMaterialInformation;
 
@@ -505,6 +518,117 @@ public class PackagingMaterialType {
      */
     public void setPackagingMaterialRecyclingSchemeCode(PackagingRecyclingSchemeCodeType value) {
         this.packagingMaterialRecyclingSchemeCode = value;
+    }
+
+    /**
+     * Gets the value of the numberOfPackagingElementUnits property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getNumberOfPackagingElementUnits() {
+        return numberOfPackagingElementUnits;
+    }
+
+    /**
+     * Sets the value of the numberOfPackagingElementUnits property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setNumberOfPackagingElementUnits(BigInteger value) {
+        this.numberOfPackagingElementUnits = value;
+    }
+
+    /**
+     * Gets the value of the packagingMaterialAdhesiveAmount property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the packagingMaterialAdhesiveAmount property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPackagingMaterialAdhesiveAmount().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link MeasurementType }
+     * 
+     * 
+     */
+    public List<MeasurementType> getPackagingMaterialAdhesiveAmount() {
+        if (packagingMaterialAdhesiveAmount == null) {
+            packagingMaterialAdhesiveAmount = new ArrayList<MeasurementType>();
+        }
+        return this.packagingMaterialAdhesiveAmount;
+    }
+
+    /**
+     * Gets the value of the packagingMaterialAdhesiveSolubilityTypeCode property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the packagingMaterialAdhesiveSolubilityTypeCode property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPackagingMaterialAdhesiveSolubilityTypeCode().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link PackagingMaterialAdhesiveSolubilityTypeCodeType }
+     * 
+     * 
+     */
+    public List<PackagingMaterialAdhesiveSolubilityTypeCodeType> getPackagingMaterialAdhesiveSolubilityTypeCode() {
+        if (packagingMaterialAdhesiveSolubilityTypeCode == null) {
+            packagingMaterialAdhesiveSolubilityTypeCode = new ArrayList<PackagingMaterialAdhesiveSolubilityTypeCodeType>();
+        }
+        return this.packagingMaterialAdhesiveSolubilityTypeCode;
+    }
+
+    /**
+     * Gets the value of the packagingMaterialAdhesiveTypeCode property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the packagingMaterialAdhesiveTypeCode property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPackagingMaterialAdhesiveTypeCode().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link PackagingMaterialAdhesiveTypeCodeType }
+     * 
+     * 
+     */
+    public List<PackagingMaterialAdhesiveTypeCodeType> getPackagingMaterialAdhesiveTypeCode() {
+        if (packagingMaterialAdhesiveTypeCode == null) {
+            packagingMaterialAdhesiveTypeCode = new ArrayList<PackagingMaterialAdhesiveTypeCodeType>();
+        }
+        return this.packagingMaterialAdhesiveTypeCode;
     }
 
     /**

@@ -30,6 +30,8 @@ import gs1.shared.shared_common.xsd._3.Description5000Type;
  *         &lt;element name="beautyPersonalCareHygieneDetail" type="{urn:gs1:gdsn:product_information:xsd:3}BeautyPersonalCareHygieneDetailType" minOccurs="0"/&gt;
  *         &lt;element name="householdAndOfficeFurnishingInformation" type="{urn:gs1:gdsn:product_information:xsd:3}HouseholdAndOfficeFurnishingInformationType" minOccurs="0"/&gt;
  *         &lt;element name="claimDetail" type="{urn:gs1:gdsn:product_information:xsd:3}ClaimDetailType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="terpeneInformation" type="{urn:gs1:gdsn:product_information:xsd:3}TerpeneInformationType" minOccurs="0"/&gt;
+ *         &lt;element name="tobaccoCannabisInformation" type="{urn:gs1:gdsn:product_information:xsd:3}TobaccoCannabisInformationType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -50,7 +52,9 @@ import gs1.shared.shared_common.xsd._3.Description5000Type;
     "apparelInformationDetail",
     "beautyPersonalCareHygieneDetail",
     "householdAndOfficeFurnishingInformation",
-    "claimDetail"
+    "claimDetail",
+    "terpeneInformation",
+    "tobaccoCannabisInformation"
 })
 public class ProductInformationDetailType {
 
@@ -65,6 +69,8 @@ public class ProductInformationDetailType {
     protected BeautyPersonalCareHygieneDetailType beautyPersonalCareHygieneDetail;
     protected HouseholdAndOfficeFurnishingInformationType householdAndOfficeFurnishingInformation;
     protected List<ClaimDetailType> claimDetail;
+    protected TerpeneInformationType terpeneInformation;
+    protected List<TobaccoCannabisInformationType> tobaccoCannabisInformation;
 
     /**
      * Gets the value of the formationTypeCode property.
@@ -363,6 +369,59 @@ public class ProductInformationDetailType {
             claimDetail = new ArrayList<ClaimDetailType>();
         }
         return this.claimDetail;
+    }
+
+    /**
+     * Gets the value of the terpeneInformation property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TerpeneInformationType }
+     *     
+     */
+    public TerpeneInformationType getTerpeneInformation() {
+        return terpeneInformation;
+    }
+
+    /**
+     * Sets the value of the terpeneInformation property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TerpeneInformationType }
+     *     
+     */
+    public void setTerpeneInformation(TerpeneInformationType value) {
+        this.terpeneInformation = value;
+    }
+
+    /**
+     * Gets the value of the tobaccoCannabisInformation property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tobaccoCannabisInformation property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTobaccoCannabisInformation().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link TobaccoCannabisInformationType }
+     * 
+     * 
+     */
+    public List<TobaccoCannabisInformationType> getTobaccoCannabisInformation() {
+        if (tobaccoCannabisInformation == null) {
+            tobaccoCannabisInformation = new ArrayList<TobaccoCannabisInformationType>();
+        }
+        return this.tobaccoCannabisInformation;
     }
 
 }

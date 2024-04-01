@@ -79,6 +79,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
  *         &lt;element name="packagingDividerInformation" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingDividerInformationType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="numberOfUnitInShippingContainer" type="{urn:gs1:gdsn:packaging_information:xsd:3}NumberOfUnitInShippingContainerType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="packagingRecyclabilityAssessmentInformation" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingRecyclabilityAssessmentInformationType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="packagingClaims" type="{urn:gs1:gdsn:packaging_information:xsd:3}PackagingClaimsType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="avpList" type="{urn:gs1:gdsn:gdsn_common:xsd:3}GS1_AttributeValuePairListType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -122,6 +123,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
     "packagingDividerInformation",
     "numberOfUnitInShippingContainer",
     "packagingRecyclabilityAssessmentInformation",
+    "packagingClaims",
     "avpList"
 })
 public class PackagingType {
@@ -163,6 +165,7 @@ public class PackagingType {
     protected List<PackagingDividerInformationType> packagingDividerInformation;
     protected List<NumberOfUnitInShippingContainerType> numberOfUnitInShippingContainer;
     protected List<PackagingRecyclabilityAssessmentInformationType> packagingRecyclabilityAssessmentInformation;
+    protected List<PackagingClaimsType> packagingClaims;
     protected GS1AttributeValuePairListType avpList;
 
     /**
@@ -1006,6 +1009,35 @@ public class PackagingType {
             packagingRecyclabilityAssessmentInformation = new ArrayList<PackagingRecyclabilityAssessmentInformationType>();
         }
         return this.packagingRecyclabilityAssessmentInformation;
+    }
+
+    /**
+     * Gets the value of the packagingClaims property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the packagingClaims property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPackagingClaims().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link PackagingClaimsType }
+     * 
+     * 
+     */
+    public List<PackagingClaimsType> getPackagingClaims() {
+        if (packagingClaims == null) {
+            packagingClaims = new ArrayList<PackagingClaimsType>();
+        }
+        return this.packagingClaims;
     }
 
     /**

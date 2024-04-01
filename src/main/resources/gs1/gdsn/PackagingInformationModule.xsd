@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:packaging_information="urn:gs1:gdsn:packaging_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:packaging_information:xsd:3" version="3.1.26">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gdsn_common="urn:gs1:gdsn:gdsn_common:xsd:3" xmlns:packaging_information="urn:gs1:gdsn:packaging_information:xsd:3" xmlns:shared_common="urn:gs1:shared:shared_common:xsd:3" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:gs1:gdsn:packaging_information:xsd:3" version="3.1.27">
     <xsd:annotation>
         <xsd:documentation><![CDATA[---------------------------
 © Copyright GS1, 2023
@@ -14,8 +14,8 @@ ANY PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  Use of the XML Schema
 file are with the understanding that GS1 has no liability for any claim to the contrary, or for any damage or loss of any kind or nature.
 
 Version Information:
-Version Number: 3.1.26
-Date of creation: October 2023
+Version Number: 3.1.27
+Date of creation: November 2023
 
 The schema and subsequent updates will be provided on the GS1 websites.
 ---------------------------
@@ -69,6 +69,24 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:extension base="shared_common:GS1CodeType"/>
         </xsd:simpleContent>
     </xsd:complexType>
+    <xsd:complexType name="PackagingClaimElementCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingClaimsType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="packagingClaimElementCode" type="packaging_information:PackagingClaimElementCodeType"/>
+            <xsd:element minOccurs="0" name="isPackagingClaimMarkedOnPackage" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="isPackagingClaimRegulated" type="xsd:boolean"/>
+            <xsd:element minOccurs="0" name="packagingClaimTypeCode" type="packaging_information:PackagingClaimTypeCodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingClaimTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
     <xsd:complexType name="PackagingDimensionType">
         <xsd:sequence>
             <xsd:element minOccurs="0" name="packagingDepth" type="shared_common:MeasurementType"/>
@@ -106,6 +124,16 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:extension base="shared_common:GS1CodeType"/>
         </xsd:simpleContent>
     </xsd:complexType>
+    <xsd:complexType name="PackagingMaterialAdhesiveSolubilityTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PackagingMaterialAdhesiveTypeCodeType">
+        <xsd:simpleContent>
+            <xsd:extension base="shared_common:GS1CodeType"/>
+        </xsd:simpleContent>
+    </xsd:complexType>
     <xsd:complexType name="PackagingMaterialAppliedProcessCodeType">
         <xsd:simpleContent>
             <xsd:extension base="shared_common:GS1CodeType"/>
@@ -139,6 +167,10 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element minOccurs="0" name="packagingLabellingCoveragePercentage" type="xsd:decimal"/>
             <xsd:element minOccurs="0" name="packagingMaterialElementCode" type="packaging_information:PackagingMaterialElementCodeType"/>
             <xsd:element minOccurs="0" name="packagingMaterialRecyclingSchemeCode" type="packaging_information:PackagingRecyclingSchemeCodeType"/>
+            <xsd:element minOccurs="0" name="numberOfPackagingElementUnits" type="xsd:integer"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMaterialAdhesiveAmount" type="shared_common:MeasurementType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMaterialAdhesiveSolubilityTypeCode" type="packaging_information:PackagingMaterialAdhesiveSolubilityTypeCodeType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingMaterialAdhesiveTypeCode" type="packaging_information:PackagingMaterialAdhesiveTypeCodeType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="compositeMaterialDetail" type="packaging_information:CompositeMaterialDetailType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRawMaterialInformation" type="packaging_information:PackagingRawMaterialInformationType"/>
         </xsd:sequence>
@@ -241,6 +273,7 @@ The schema and subsequent updates will be provided on the GS1 websites.
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingDividerInformation" type="packaging_information:PackagingDividerInformationType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="numberOfUnitInShippingContainer" type="packaging_information:NumberOfUnitInShippingContainerType"/>
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingRecyclabilityAssessmentInformation" type="packaging_information:PackagingRecyclabilityAssessmentInformationType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="packagingClaims" type="packaging_information:PackagingClaimsType"/>
             <xsd:element minOccurs="0" name="avpList" type="gdsn_common:GS1_AttributeValuePairListType"/>
         </xsd:sequence>
     </xsd:complexType>
