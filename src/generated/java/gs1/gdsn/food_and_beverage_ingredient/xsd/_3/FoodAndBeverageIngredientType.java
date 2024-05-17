@@ -17,6 +17,7 @@ import gs1.gdsn.gdsn_common.xsd._3.PlaceOfProductActivityType;
 import gs1.shared.shared_common.xsd._3.CodeType;
 import gs1.shared.shared_common.xsd._3.Description500Type;
 import gs1.shared.shared_common.xsd._3.Description70Type;
+import gs1.shared.shared_common.xsd._3.MeasurementType;
 import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
 
 
@@ -53,6 +54,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
  *         &lt;element name="ingredientDefinition" type="{urn:gs1:shared:shared_common:xsd:3}Description500Type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="isIngredientEmphasised" type="{urn:gs1:shared:shared_common:xsd:3}NonBinaryLogicEnumerationType" minOccurs="0"/&gt;
  *         &lt;element name="ingredientCode" type="{urn:gs1:shared:shared_common:xsd:3}CodeType" minOccurs="0"/&gt;
+ *         &lt;element name="driedEquivalent" type="{urn:gs1:shared:shared_common:xsd:3}MeasurementType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="ingredientFarmingProcessing" type="{urn:gs1:gdsn:gdsn_common:xsd:3}FarmingAndProcessingInformationType" minOccurs="0"/&gt;
  *         &lt;element name="ingredientOrganicInformation" type="{urn:gs1:gdsn:gdsn_common:xsd:3}OrganicInformationType" minOccurs="0"/&gt;
  *         &lt;element name="ingredientParty" type="{urn:gs1:gdsn:gdsn_common:xsd:3}PartyInRoleType" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -77,6 +79,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
     "ingredientDefinition",
     "isIngredientEmphasised",
     "ingredientCode",
+    "driedEquivalent",
     "ingredientFarmingProcessing",
     "ingredientOrganicInformation",
     "ingredientParty",
@@ -95,6 +98,7 @@ public class FoodAndBeverageIngredientType {
     @XmlSchemaType(name = "string")
     protected NonBinaryLogicEnumerationType isIngredientEmphasised;
     protected CodeType ingredientCode;
+    protected List<MeasurementType> driedEquivalent;
     protected FarmingAndProcessingInformationType ingredientFarmingProcessing;
     protected OrganicInformationType ingredientOrganicInformation;
     protected List<PartyInRoleType> ingredientParty;
@@ -335,6 +339,35 @@ public class FoodAndBeverageIngredientType {
      */
     public void setIngredientCode(CodeType value) {
         this.ingredientCode = value;
+    }
+
+    /**
+     * Gets the value of the driedEquivalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the driedEquivalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDriedEquivalent().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link MeasurementType }
+     * 
+     * 
+     */
+    public List<MeasurementType> getDriedEquivalent() {
+        if (driedEquivalent == null) {
+            driedEquivalent = new ArrayList<MeasurementType>();
+        }
+        return this.driedEquivalent;
     }
 
     /**

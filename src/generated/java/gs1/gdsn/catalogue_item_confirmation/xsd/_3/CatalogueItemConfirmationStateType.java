@@ -22,6 +22,8 @@ import gs1.gdsn.gdsn_common.xsd._3.SynchronisationConfirmationStateEnumerationTy
  *         &lt;element name="catalogueItemConfirmationStateCode" type="{urn:gs1:gdsn:gdsn_common:xsd:3}SynchronisationConfirmationStateEnumerationType"/&gt;
  *         &lt;element name="recipientGLN" type="{urn:gs1:shared:shared_common:xsd:3}GLNType"/&gt;
  *         &lt;element name="recipientDataPool" type="{urn:gs1:shared:shared_common:xsd:3}GLNType" minOccurs="0"/&gt;
+ *         &lt;element name="messageCreatorGLN" type="{urn:gs1:shared:shared_common:xsd:3}GLNType"/&gt;
+ *         &lt;element name="messageCreatorName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -34,7 +36,9 @@ import gs1.gdsn.gdsn_common.xsd._3.SynchronisationConfirmationStateEnumerationTy
 @XmlType(name = "CatalogueItemConfirmationStateType", propOrder = {
     "catalogueItemConfirmationStateCode",
     "recipientGLN",
-    "recipientDataPool"
+    "recipientDataPool",
+    "messageCreatorGLN",
+    "messageCreatorName"
 })
 public class CatalogueItemConfirmationStateType {
 
@@ -44,6 +48,9 @@ public class CatalogueItemConfirmationStateType {
     @XmlElement(required = true)
     protected String recipientGLN;
     protected String recipientDataPool;
+    @XmlElement(required = true)
+    protected String messageCreatorGLN;
+    protected String messageCreatorName;
 
     /**
      * Gets the value of the catalogueItemConfirmationStateCode property.
@@ -115,6 +122,54 @@ public class CatalogueItemConfirmationStateType {
      */
     public void setRecipientDataPool(String value) {
         this.recipientDataPool = value;
+    }
+
+    /**
+     * Gets the value of the messageCreatorGLN property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessageCreatorGLN() {
+        return messageCreatorGLN;
+    }
+
+    /**
+     * Sets the value of the messageCreatorGLN property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMessageCreatorGLN(String value) {
+        this.messageCreatorGLN = value;
+    }
+
+    /**
+     * Gets the value of the messageCreatorName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessageCreatorName() {
+        return messageCreatorName;
+    }
+
+    /**
+     * Sets the value of the messageCreatorName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMessageCreatorName(String value) {
+        this.messageCreatorName = value;
     }
 
 }

@@ -66,6 +66,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MicrobiologicalOrganismStrainCodeType }
+     * 
+     */
+    public MicrobiologicalOrganismStrainCodeType createMicrobiologicalOrganismStrainCodeType() {
+        return new MicrobiologicalOrganismStrainCodeType();
+    }
+
+    /**
      * Create an instance of {@link PhysiochemicalCharacteristicCodeType }
      * 
      */

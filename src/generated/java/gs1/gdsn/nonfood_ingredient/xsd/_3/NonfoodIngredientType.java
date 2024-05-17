@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 import gs1.gdsn.gdsn_common.xsd._3.GS1AttributeValuePairListType;
 import gs1.shared.shared_common.xsd._3.CodeType;
 import gs1.shared.shared_common.xsd._3.Description500Type;
+import gs1.shared.shared_common.xsd._3.MeasurementType;
 import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
 
 
@@ -30,6 +31,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
  *         &lt;element name="isNonfoodIngredientEmphasized" type="{urn:gs1:shared:shared_common:xsd:3}NonBinaryLogicEnumerationType" minOccurs="0"/&gt;
  *         &lt;element name="nonfoodIngredientDefinition" type="{urn:gs1:shared:shared_common:xsd:3}Description500Type" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="nonfoodIngredientPurpose" type="{urn:gs1:shared:shared_common:xsd:3}Description500Type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="driedEquivalent" type="{urn:gs1:shared:shared_common:xsd:3}MeasurementType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="ingredientStrength" type="{urn:gs1:gdsn:nonfood_ingredient:xsd:3}IngredientStrengthType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="avpList" type="{urn:gs1:gdsn:gdsn_common:xsd:3}GS1_AttributeValuePairListType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -49,6 +51,7 @@ import gs1.shared.shared_common.xsd._3.NonBinaryLogicEnumerationType;
     "isNonfoodIngredientEmphasized",
     "nonfoodIngredientDefinition",
     "nonfoodIngredientPurpose",
+    "driedEquivalent",
     "ingredientStrength",
     "avpList"
 })
@@ -64,6 +67,7 @@ public class NonfoodIngredientType {
     protected NonBinaryLogicEnumerationType isNonfoodIngredientEmphasized;
     protected List<Description500Type> nonfoodIngredientDefinition;
     protected List<Description500Type> nonfoodIngredientPurpose;
+    protected List<MeasurementType> driedEquivalent;
     protected List<IngredientStrengthType> ingredientStrength;
     protected GS1AttributeValuePairListType avpList;
 
@@ -248,6 +252,35 @@ public class NonfoodIngredientType {
             nonfoodIngredientPurpose = new ArrayList<Description500Type>();
         }
         return this.nonfoodIngredientPurpose;
+    }
+
+    /**
+     * Gets the value of the driedEquivalent property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the driedEquivalent property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDriedEquivalent().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link MeasurementType }
+     * 
+     * 
+     */
+    public List<MeasurementType> getDriedEquivalent() {
+        if (driedEquivalent == null) {
+            driedEquivalent = new ArrayList<MeasurementType>();
+        }
+        return this.driedEquivalent;
     }
 
     /**

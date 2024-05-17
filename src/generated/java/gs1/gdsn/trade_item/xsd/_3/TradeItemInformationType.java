@@ -26,10 +26,10 @@ import se.exder.external.gs1.gdsn3p1.Adapter1;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="productionVariantDescription" type="{urn:gs1:shared:shared_common:xsd:3}Description70Type" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="productionVariantEffectiveDateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
- *         &lt;element name="productionVariantCancelledDateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
- *         &lt;element name="productionVariantDiscontinuedDateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="consumerProductVariantDescription" type="{urn:gs1:shared:shared_common:xsd:3}Description70Type" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="consumerProductVariantStartEffectiveDateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="consumerProductVariantCancelledDateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="consumerProductVariantDiscontinuedDateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="consumerProductVariantEndEffectiveDateTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="consumerProductVariantIdentification" minOccurs="0"&gt;
  *           &lt;simpleType&gt;
@@ -53,10 +53,10 @@ import se.exder.external.gs1.gdsn3p1.Adapter1;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TradeItemInformationType", propOrder = {
-    "productionVariantDescription",
-    "productionVariantEffectiveDateTime",
-    "productionVariantCancelledDateTime",
-    "productionVariantDiscontinuedDateTime",
+    "consumerProductVariantDescription",
+    "consumerProductVariantStartEffectiveDateTime",
+    "consumerProductVariantCancelledDateTime",
+    "consumerProductVariantDiscontinuedDateTime",
     "consumerProductVariantEndEffectiveDateTime",
     "consumerProductVariantIdentification",
     "consumerProductVariantReasonCode",
@@ -66,19 +66,19 @@ import se.exder.external.gs1.gdsn3p1.Adapter1;
 })
 public class TradeItemInformationType {
 
-    protected List<Description70Type> productionVariantDescription;
+    protected List<Description70Type> consumerProductVariantDescription;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "dateTime")
-    protected LocalDateTime productionVariantEffectiveDateTime;
+    protected LocalDateTime consumerProductVariantStartEffectiveDateTime;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "dateTime")
-    protected LocalDateTime productionVariantCancelledDateTime;
+    protected LocalDateTime consumerProductVariantCancelledDateTime;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "dateTime")
-    protected LocalDateTime productionVariantDiscontinuedDateTime;
+    protected LocalDateTime consumerProductVariantDiscontinuedDateTime;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "dateTime")
@@ -90,18 +90,18 @@ public class TradeItemInformationType {
     protected GS1AttributeValuePairListType avpList;
 
     /**
-     * Gets the value of the productionVariantDescription property.
+     * Gets the value of the consumerProductVariantDescription property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the productionVariantDescription property.
+     * This is why there is not a <CODE>set</CODE> method for the consumerProductVariantDescription property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getProductionVariantDescription().add(newItem);
+     *    getConsumerProductVariantDescription().add(newItem);
      * </pre>
      * 
      * 
@@ -111,83 +111,83 @@ public class TradeItemInformationType {
      * 
      * 
      */
-    public List<Description70Type> getProductionVariantDescription() {
-        if (productionVariantDescription == null) {
-            productionVariantDescription = new ArrayList<Description70Type>();
+    public List<Description70Type> getConsumerProductVariantDescription() {
+        if (consumerProductVariantDescription == null) {
+            consumerProductVariantDescription = new ArrayList<Description70Type>();
         }
-        return this.productionVariantDescription;
+        return this.consumerProductVariantDescription;
     }
 
     /**
-     * Gets the value of the productionVariantEffectiveDateTime property.
+     * Gets the value of the consumerProductVariantStartEffectiveDateTime property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public LocalDateTime getProductionVariantEffectiveDateTime() {
-        return productionVariantEffectiveDateTime;
+    public LocalDateTime getConsumerProductVariantStartEffectiveDateTime() {
+        return consumerProductVariantStartEffectiveDateTime;
     }
 
     /**
-     * Sets the value of the productionVariantEffectiveDateTime property.
+     * Sets the value of the consumerProductVariantStartEffectiveDateTime property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setProductionVariantEffectiveDateTime(LocalDateTime value) {
-        this.productionVariantEffectiveDateTime = value;
+    public void setConsumerProductVariantStartEffectiveDateTime(LocalDateTime value) {
+        this.consumerProductVariantStartEffectiveDateTime = value;
     }
 
     /**
-     * Gets the value of the productionVariantCancelledDateTime property.
+     * Gets the value of the consumerProductVariantCancelledDateTime property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public LocalDateTime getProductionVariantCancelledDateTime() {
-        return productionVariantCancelledDateTime;
+    public LocalDateTime getConsumerProductVariantCancelledDateTime() {
+        return consumerProductVariantCancelledDateTime;
     }
 
     /**
-     * Sets the value of the productionVariantCancelledDateTime property.
+     * Sets the value of the consumerProductVariantCancelledDateTime property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setProductionVariantCancelledDateTime(LocalDateTime value) {
-        this.productionVariantCancelledDateTime = value;
+    public void setConsumerProductVariantCancelledDateTime(LocalDateTime value) {
+        this.consumerProductVariantCancelledDateTime = value;
     }
 
     /**
-     * Gets the value of the productionVariantDiscontinuedDateTime property.
+     * Gets the value of the consumerProductVariantDiscontinuedDateTime property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public LocalDateTime getProductionVariantDiscontinuedDateTime() {
-        return productionVariantDiscontinuedDateTime;
+    public LocalDateTime getConsumerProductVariantDiscontinuedDateTime() {
+        return consumerProductVariantDiscontinuedDateTime;
     }
 
     /**
-     * Sets the value of the productionVariantDiscontinuedDateTime property.
+     * Sets the value of the consumerProductVariantDiscontinuedDateTime property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setProductionVariantDiscontinuedDateTime(LocalDateTime value) {
-        this.productionVariantDiscontinuedDateTime = value;
+    public void setConsumerProductVariantDiscontinuedDateTime(LocalDateTime value) {
+        this.consumerProductVariantDiscontinuedDateTime = value;
     }
 
     /**

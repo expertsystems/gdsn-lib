@@ -82,6 +82,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PackagingClaimElementCodeType }
+     * 
+     */
+    public PackagingClaimElementCodeType createPackagingClaimElementCodeType() {
+        return new PackagingClaimElementCodeType();
+    }
+
+    /**
+     * Create an instance of {@link PackagingClaimsType }
+     * 
+     */
+    public PackagingClaimsType createPackagingClaimsType() {
+        return new PackagingClaimsType();
+    }
+
+    /**
+     * Create an instance of {@link PackagingClaimTypeCodeType }
+     * 
+     */
+    public PackagingClaimTypeCodeType createPackagingClaimTypeCodeType() {
+        return new PackagingClaimTypeCodeType();
+    }
+
+    /**
      * Create an instance of {@link PackagingDimensionType }
      * 
      */
@@ -119,6 +143,22 @@ public class ObjectFactory {
      */
     public PackagingLabellingTypeCodeType createPackagingLabellingTypeCodeType() {
         return new PackagingLabellingTypeCodeType();
+    }
+
+    /**
+     * Create an instance of {@link PackagingMaterialAdhesiveSolubilityTypeCodeType }
+     * 
+     */
+    public PackagingMaterialAdhesiveSolubilityTypeCodeType createPackagingMaterialAdhesiveSolubilityTypeCodeType() {
+        return new PackagingMaterialAdhesiveSolubilityTypeCodeType();
+    }
+
+    /**
+     * Create an instance of {@link PackagingMaterialAdhesiveTypeCodeType }
+     * 
+     */
+    public PackagingMaterialAdhesiveTypeCodeType createPackagingMaterialAdhesiveTypeCodeType() {
+        return new PackagingMaterialAdhesiveTypeCodeType();
     }
 
     /**

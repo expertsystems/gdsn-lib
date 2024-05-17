@@ -91,6 +91,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CarrierSubstanceTypeCodeType }
+     * 
+     */
+    public CarrierSubstanceTypeCodeType createCarrierSubstanceTypeCodeType() {
+        return new CarrierSubstanceTypeCodeType();
+    }
+
+    /**
      * Create an instance of {@link CatalogueItemConfirmationStatusCodeType }
      * 
      */
@@ -259,11 +267,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ExtractionProcessCodeType }
+     * 
+     */
+    public ExtractionProcessCodeType createExtractionProcessCodeType() {
+        return new ExtractionProcessCodeType();
+    }
+
+    /**
      * Create an instance of {@link FarmingAndProcessingInformationType }
      * 
      */
     public FarmingAndProcessingInformationType createFarmingAndProcessingInformationType() {
         return new FarmingAndProcessingInformationType();
+    }
+
+    /**
+     * Create an instance of {@link FloweringTriggerCodeType }
+     * 
+     */
+    public FloweringTriggerCodeType createFloweringTriggerCodeType() {
+        return new FloweringTriggerCodeType();
+    }
+
+    /**
+     * Create an instance of {@link FlowerTrimmingMethodCodeType }
+     * 
+     */
+    public FlowerTrimmingMethodCodeType createFlowerTrimmingMethodCodeType() {
+        return new FlowerTrimmingMethodCodeType();
     }
 
     /**
@@ -296,6 +328,14 @@ public class ObjectFactory {
      */
     public FormattedDescription500Type createFormattedDescription500Type() {
         return new FormattedDescription500Type();
+    }
+
+    /**
+     * Create an instance of {@link GrowingLightConditionTypeCodeType }
+     * 
+     */
+    public GrowingLightConditionTypeCodeType createGrowingLightConditionTypeCodeType() {
+        return new GrowingLightConditionTypeCodeType();
     }
 
     /**
@@ -672,6 +712,14 @@ public class ObjectFactory {
      */
     public TradeItemContextCodeType createTradeItemContextCodeType() {
         return new TradeItemContextCodeType();
+    }
+
+    /**
+     * Create an instance of {@link TradeItemGenderTypeCodeType }
+     * 
+     */
+    public TradeItemGenderTypeCodeType createTradeItemGenderTypeCodeType() {
+        return new TradeItemGenderTypeCodeType();
     }
 
     /**
